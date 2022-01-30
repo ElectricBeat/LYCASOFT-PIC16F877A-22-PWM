@@ -1,0 +1,422 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.83 build 10920 
+                                                                                               Fri Dec 14 11:55:48 2018
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 10920
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 10920"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           # 4 "E:\02-CODING\05-LYCASOFT CODING\02-CODING\01-PIC16F877A\23-PWM\CODE\PWM.c"
+    43                           	psect config,class=CONFIG,delta=2 ;#
+    44                           # 4 "E:\02-CODING\05-LYCASOFT CODING\02-CODING\01-PIC16F877A\23-PWM\CODE\PWM.c"
+    45  2007  3F3A               	dw 0X3F3A ;#
+    46                           	FNROOT	_main
+    47                           	global	_CCP1CON
+    48                           psect	maintext,global,class=CODE,delta=2
+    49                           global __pmaintext
+    50  07B1                     __pmaintext:
+    51  0017                     _CCP1CON	set	23
+    52                           	global	_CCPR1H
+    53  0016                     _CCPR1H	set	22
+    54                           	global	_CCPR1L
+    55  0015                     _CCPR1L	set	21
+    56                           	global	_PORTC
+    57  0007                     _PORTC	set	7
+    58                           	global	_T2CON
+    59  0012                     _T2CON	set	18
+    60                           	global	_TMR2
+    61  0011                     _TMR2	set	17
+    62                           	global	_CARRY
+    63  0018                     _CARRY	set	24
+    64                           	global	_GIE
+    65  005F                     _GIE	set	95
+    66                           	global	_PR2
+    67  0092                     _PR2	set	146
+    68                           	global	_TRISC
+    69  0087                     _TRISC	set	135
+    70                           	global	_EEADR
+    71  010D                     _EEADR	set	269
+    72                           	global	_EEDATA
+    73  010C                     _EEDATA	set	268
+    74                           	global	_EECON1
+    75  018C                     _EECON1	set	396
+    76                           	global	_EECON2
+    77  018D                     _EECON2	set	397
+    78                           	global	_RD
+    79  0C60                     _RD	set	3168
+    80                           	global	_WR
+    81  0C61                     _WR	set	3169
+    82                           	global	_WREN
+    83  0C62                     _WREN	set	3170
+    84                           	file	"PWM.as"
+    85                           	line	#
+    86                           psect cinit,class=CODE,delta=2
+    87                           global start_initialization
+    88  07AD                     start_initialization:
+    89                           
+    90                           psect cinit,class=CODE,delta=2
+    91                           global end_of_initialization
+    92                           
+    93                           ;End of C runtime variable initialization code
+    94                           
+    95  07AD                     end_of_initialization:
+    96  07AD  0183               clrf status
+    97  07AE  120A  118A  2FB1   ljmp _main	;jump to C main() function
+    98                           psect	cstackCOMMON,class=COMMON,space=1
+    99                           global __pcstackCOMMON
+   100  0070                     __pcstackCOMMON:
+   101                           	global	?_main
+   102  0070                     ?_main:	; 0 bytes @ 0x0
+   103                           	global	??_main
+   104  0070                     ??_main:	; 0 bytes @ 0x0
+   105  0070                     	ds	3
+   106                           	global	main@i
+   107  0073                     main@i:	; 2 bytes @ 0x3
+   108  0073                     	ds	2
+   109 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   110 ;;Auto spaces:   Size  Autos    Used
+   111 ;; COMMON          14      5       5
+   112 ;; BANK0           80      0       0
+   113 ;; BANK1           80      0       0
+   114 ;; BANK3           96      0       0
+   115 ;; BANK2           96      0       0
+   116                           
+   117 ;;
+   118 ;; Pointer list with targets:
+   119                           
+   120                           
+   121                           
+   122 ;;
+   123 ;; Critical Paths under _main in COMMON
+   124 ;;
+   125 ;;   None.
+   126 ;;
+   127 ;; Critical Paths under _main in BANK0
+   128 ;;
+   129 ;;   None.
+   130 ;;
+   131 ;; Critical Paths under _main in BANK1
+   132 ;;
+   133 ;;   None.
+   134 ;;
+   135 ;; Critical Paths under _main in BANK3
+   136 ;;
+   137 ;;   None.
+   138 ;;
+   139 ;; Critical Paths under _main in BANK2
+   140 ;;
+   141 ;;   None.
+   142                           
+   143 ;;
+   144 ;;Main: autosize = 0, tempsize = 3, incstack = 0, save=0
+   145 ;;
+   146                           
+   147 ;;
+   148 ;;Call Graph Tables:
+   149 ;;
+   150 ;; ---------------------------------------------------------------------------------
+   151 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   152 ;; ---------------------------------------------------------------------------------
+   153 ;; (0) _main                                                 5     5      0      45
+   154 ;;                                              0 COMMON     5     5      0
+   155 ;; ---------------------------------------------------------------------------------
+   156 ;; Estimated maximum stack depth 0
+   157 ;; ---------------------------------------------------------------------------------
+   158                           
+   159 ;; Call Graph Graphs:
+   160                           
+   161 ;; _main (ROOT)
+   162 ;;
+   163                           
+   164 ;; Address spaces:
+   165                           
+   166 ;;Name               Size   Autos  Total    Cost      Usage
+   167 ;;BITCOMMON            E      0       0       0        0.0%
+   168 ;;EEDATA             100      0       0       0        0.0%
+   169 ;;NULL                 0      0       0       0        0.0%
+   170 ;;CODE                 0      0       0       0        0.0%
+   171 ;;COMMON               E      5       5       1       35.7%
+   172 ;;BITSFR0              0      0       0       1        0.0%
+   173 ;;SFR0                 0      0       0       1        0.0%
+   174 ;;BITSFR1              0      0       0       2        0.0%
+   175 ;;SFR1                 0      0       0       2        0.0%
+   176 ;;STACK                0      0       0       2        0.0%
+   177 ;;ABS                  0      0       0       3        0.0%
+   178 ;;BITBANK0            50      0       0       4        0.0%
+   179 ;;BITSFR3              0      0       0       4        0.0%
+   180 ;;SFR3                 0      0       0       4        0.0%
+   181 ;;BANK0               50      0       0       5        0.0%
+   182 ;;BITSFR2              0      0       0       5        0.0%
+   183 ;;SFR2                 0      0       0       5        0.0%
+   184 ;;BITBANK1            50      0       0       6        0.0%
+   185 ;;BANK1               50      0       0       7        0.0%
+   186 ;;BITBANK3            60      0       0       8        0.0%
+   187 ;;BANK3               60      0       0       9        0.0%
+   188 ;;BITBANK2            60      0       0      10        0.0%
+   189 ;;BANK2               60      0       0      11        0.0%
+   190 ;;DATA                 0      0       0      12        0.0%
+   191                           
+   192                           	global	_main
+   193                           psect	maintext
+   194                           
+   195 ;; *************** function _main *****************
+   196 ;; Defined at:
+   197 ;;		line 7 in file "E:\02-CODING\05-LYCASOFT CODING\02-CODING\01-PIC16F877A\23-PWM\CODE\PWM.c"
+   198 ;; Parameters:    Size  Location     Type
+   199 ;;		None
+   200 ;; Auto vars:     Size  Location     Type
+   201 ;;  i               2    3[COMMON] int 
+   202 ;; Return value:  Size  Location     Type
+   203 ;;		None               void
+   204 ;; Registers used:
+   205 ;;		wreg, status,2, btemp+1
+   206 ;; Tracked objects:
+   207 ;;		On entry : 17F/0
+   208 ;;		On exit  : 0/0
+   209 ;;		Unchanged: 0/0
+   210 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   211 ;;      Params:         0       0       0       0       0
+   212 ;;      Locals:         2       0       0       0       0
+   213 ;;      Temps:          3       0       0       0       0
+   214 ;;      Totals:         5       0       0       0       0
+   215 ;;Total ram usage:        5 bytes
+   216 ;; This function calls:
+   217 ;;		Nothing
+   218 ;; This function is called by:
+   219 ;;		Startup code after reset
+   220 ;; This function uses a non-reentrant model
+   221 ;;
+   222                           psect	maintext
+   223                           	file	"E:\02-CODING\05-LYCASOFT CODING\02-CODING\01-PIC16F877A\23-PWM\CODE\PWM.c"
+   224                           	line	7
+   225                           	global	__size_of_main
+   226  004F                     	__size_of_main	equ	__end_of_main-_main
+   227                           	
+   228  07B1                     _main:	
+   229                           	opt	stack 8
+   230                           ; Regs used in _main: [wreg+status,2+btemp+1]
+   231                           	line	9
+   232                           	
+   233  07B1                     l2597:	
+   234                           ;PWM.c: 8: int i;
+   235                           ;PWM.c: 9: TRISC=0X00;
+   236  07B1  1683               	bsf	status, 5	;RP0=1, select bank1
+   237  07B2  1303               	bcf	status, 6	;RP1=0, select bank1
+   238  07B3  0187               	clrf	(135)^080h	;volatile
+   239                           	line	10
+   240                           ;PWM.c: 10: PORTC=0X00;
+   241  07B4  1283               	bcf	status, 5	;RP0=0, select bank0
+   242  07B5  1303               	bcf	status, 6	;RP1=0, select bank0
+   243  07B6  0187               	clrf	(7)	;volatile
+   244                           	line	11
+   245                           	
+   246  07B7                     l2599:	
+   247                           ;PWM.c: 11: CCP1CON=0X0C;
+   248  07B7  300C               	movlw	(0Ch)
+   249  07B8  0097               	movwf	(23)	;volatile
+   250                           	line	12
+   251                           	
+   252  07B9                     l2601:	
+   253                           ;PWM.c: 12: TMR2=0;
+   254  07B9  0191               	clrf	(17)	;volatile
+   255                           	line	13
+   256                           ;PWM.c: 13: PR2=1023;
+   257  07BA  30FF               	movlw	(0FFh)
+   258  07BB  1683               	bsf	status, 5	;RP0=1, select bank1
+   259  07BC  1303               	bcf	status, 6	;RP1=0, select bank1
+   260  07BD  0092               	movwf	(146)^080h	;volatile
+   261                           	line	14
+   262                           ;PWM.c: 14: T2CON=0X07;
+   263  07BE  3007               	movlw	(07h)
+   264  07BF  1283               	bcf	status, 5	;RP0=0, select bank0
+   265  07C0  1303               	bcf	status, 6	;RP1=0, select bank0
+   266  07C1  0092               	movwf	(18)	;volatile
+   267                           	line	15
+   268                           	
+   269  07C2                     l2603:	
+   270                           ;PWM.c: 15: CCPR1H=0X00;
+   271  07C2  0196               	clrf	(22)	;volatile
+   272                           	line	16
+   273                           	
+   274  07C3                     l2605:	
+   275                           ;PWM.c: 16: CCPR1L=0X00;
+   276  07C3  0195               	clrf	(21)	;volatile
+   277  07C4  2FC5               	goto	l2607
+   278                           	line	18
+   279                           ;PWM.c: 18: while(1)
+   280                           	
+   281  07C5                     l687:	
+   282                           	line	20
+   283                           	
+   284  07C5                     l2607:	
+   285                           ;PWM.c: 19: {
+   286                           ;PWM.c: 20: for(i=0;i<1023;i++)
+   287  07C5  01F3               	clrf	(main@i)
+   288  07C6  01F4               	clrf	(main@i+1)
+   289                           	
+   290  07C7                     l2609:	
+   291  07C7  0874               	movf	(main@i+1),w
+   292  07C8  3A80               	xorlw	80h
+   293  07C9  00FF               	movwf	btemp+1
+   294  07CA  3083               	movlw	(high(03FFh))^80h
+   295  07CB  027F               	subwf	btemp+1,w
+   296  07CC  1D03               	skipz
+   297  07CD  2FD0               	goto	u2225
+   298  07CE  30FF               	movlw	low(03FFh)
+   299  07CF  0273               	subwf	(main@i),w
+   300  07D0                     u2225:
+   301                           
+   302  07D0  1C03               	skipc
+   303  07D1  2FD3               	goto	u2221
+   304  07D2  2FD4               	goto	u2220
+   305  07D3                     u2221:
+   306  07D3  2FD6               	goto	l2613
+   307  07D4                     u2220:
+   308  07D4  2FC5               	goto	l2607
+   309                           	
+   310  07D5                     l2611:	
+   311  07D5  2FC5               	goto	l2607
+   312                           	line	21
+   313                           	
+   314  07D6                     l688:	
+   315                           	line	22
+   316                           	
+   317  07D6                     l2613:	
+   318                           ;PWM.c: 21: {
+   319                           ;PWM.c: 22: CCPR1L=i;
+   320  07D6  0873               	movf	(main@i),w
+   321  07D7  1283               	bcf	status, 5	;RP0=0, select bank0
+   322  07D8  1303               	bcf	status, 6	;RP1=0, select bank0
+   323  07D9  0095               	movwf	(21)	;volatile
+   324                           	line	23
+   325                           ;PWM.c: 23: _delay((unsigned long)((100)*(20e6/4000.0)));
+   326                           	opt asmopt_off
+   327  07DA  3003               movlw  3
+   328  07DB  00F2               movwf	((??_main+0)+0+2),f
+   329  07DC  308A               movlw	138
+   330  07DD  00F1               movwf	((??_main+0)+0+1),f
+   331  07DE  3056               	movlw	86
+   332  07DF  00F0               movwf	((??_main+0)+0),f
+   333  07E0                     u2247:
+   334  07E0  0BF0               	decfsz	((??_main+0)+0),f
+   335  07E1  2FE0               	goto	u2247
+   336  07E2  0BF1               	decfsz	((??_main+0)+0+1),f
+   337  07E3  2FE0               	goto	u2247
+   338  07E4  0BF2               	decfsz	((??_main+0)+0+2),f
+   339  07E5  2FE0               	goto	u2247
+   340  07E6  2FE7               	nop2
+   341                           opt asmopt_on
+   342                           
+   343                           	line	20
+   344  07E7  3001               	movlw	low(01h)
+   345  07E8  07F3               	addwf	(main@i),f
+   346  07E9  1803               	skipnc
+   347  07EA  0AF4               	incf	(main@i+1),f
+   348  07EB  3000               	movlw	high(01h)
+   349  07EC  07F4               	addwf	(main@i+1),f
+   350                           	
+   351  07ED                     l2615:	
+   352  07ED  0874               	movf	(main@i+1),w
+   353  07EE  3A80               	xorlw	80h
+   354  07EF  00FF               	movwf	btemp+1
+   355  07F0  3083               	movlw	(high(03FFh))^80h
+   356  07F1  027F               	subwf	btemp+1,w
+   357  07F2  1D03               	skipz
+   358  07F3  2FF6               	goto	u2235
+   359  07F4  30FF               	movlw	low(03FFh)
+   360  07F5  0273               	subwf	(main@i),w
+   361  07F6                     u2235:
+   362                           
+   363  07F6  1C03               	skipc
+   364  07F7  2FF9               	goto	u2231
+   365  07F8  2FFA               	goto	u2230
+   366  07F9                     u2231:
+   367  07F9  2FD6               	goto	l2613
+   368  07FA                     u2230:
+   369  07FA  2FC5               	goto	l2607
+   370                           	
+   371  07FB                     l689:	
+   372  07FB  2FC5               	goto	l2607
+   373                           	line	25
+   374                           	
+   375  07FC                     l690:	
+   376                           	line	18
+   377  07FC  2FC5               	goto	l2607
+   378                           	
+   379  07FD                     l691:	
+   380                           	line	26
+   381                           	
+   382  07FD                     l692:	
+   383                           	global	start
+   384  07FD  120A  118A  2800   	ljmp	start
+   385                           	opt stack 0
+   386                           GLOBAL	__end_of_main
+   387  0800                     	__end_of_main:
+   388 ;; =============== function _main ends ============
+   389                           
+   390                           	signat	_main,88
+   391                           psect	maintext
+   392                           	global	btemp
+   393  007E                     	btemp set 07Eh
+   394                           
+   395                           	DABS	1,126,2	;btemp
+   396                           	global	wtemp0
+   397  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.83 build 10920 
+Symbol Table                                                                                   Fri Dec 14 11:55:48 2018
+
+                  _RD 0C60                    _WR 0C61                   l690 07FC                   l691 07FD  
+                 l692 07FD                   l687 07C5                   l688 07D6                   l689 07FB  
+                 _GIE 005F                   _PR2 0092                  l2601 07B9                  l2611 07D5  
+                l2603 07C2                  l2613 07D6                  l2605 07C3                  l2615 07ED  
+                l2607 07C5                  l2609 07C7                  l2597 07B1                  l2599 07B7  
+                u2220 07D4                  u2221 07D3                  u2230 07FA                  u2231 07F9  
+                u2225 07D0                  u2235 07F6                  u2247 07E0                  _TMR2 0011  
+                _WREN 0C62                  _main 07B1                  btemp 007E                  start 0000  
+               ?_main 0070                 _EEADR 010D                 _CARRY 0018                 _T2CON 0012  
+               _PORTC 0007                 _TRISC 0087                 main@i 0073                 status 0003  
+               wtemp0 007E          __end_of_main 0800                ??_main 0070                _EEDATA 010C  
+              _CCPR1H 0016                _CCPR1L 0015                _EECON1 018C                _EECON2 018D  
+      __pcstackCOMMON 0070            __pmaintext 07B1               _CCP1CON 0017  end_of_initialization 07AD  
+ start_initialization 07AD         __size_of_main 004F  
